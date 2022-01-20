@@ -1,24 +1,54 @@
 import java.util.ArrayList;
 
 public class Mastermind {
-	//variables
-	//ArrayList
-	//2D ArrayList
 	
-	//char[][] arr = new char[10][8]; //4 secret pins, 4 score location
-	//ArrayList<String> test = new ArrayList,String>();
-	
-	//4 secret pins, 4 score location
 	ArrayList<ArrayList<String>> board = new ArrayList<ArrayList<String>>();
 	
-	public void builBoard() {
+	public void buildBoard() {
 		board.add(new ArrayList<String>());
-		board.get(0).add("R");
+		for (int i = 0; i < 4; i++) {
+			board.get(0).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(1).add("0");
+			if (i == 2) {
+				board.get(1).add("\n\t\t 0");
+			}
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(2).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(3).add("0");
+			if (i == 2) {
+				board.get(3).add("\n\t\t 0");
+			}
+		}
 	}
-
+	
+	
+	public void guessBoard() {
+		
+		board.get(0).set(0, "A");
+		board.get(0).set(1, "B");
+		board.get(0).set(2, "C");
+		board.get(0).set(3, "D");
+	}
+	
+	
 	public void printBoard() {
-		System.out.println("\t Guesses \t Scores");
-		System.out.println(board);
+		System.out.println("Guesses         Scores");
+		System.out.print(board.get(0));
+		System.out.println("\t" + board.get(1));
+		System.out.print(board.get(2));
+		System.out.println("\t" + board.get(3));
 	}
 }
+
 
