@@ -59,7 +59,7 @@ public class Mastermind {
 	}
 	
 	public void buildBoard() {
-		
+		//guess 1
 		board.add(new ArrayList<String>());
 		for (int i = 0; i < 4; i++) {
 			board.get(0).add(" ");
@@ -72,7 +72,8 @@ public class Mastermind {
 				board.get(1).add("\n\t\t 0");
 			}
 		}
-	
+		
+		//guess 2
 		board.add(new ArrayList<String>());
 		for (int i = 0; i < 4; i++) {
 			board.get(2).add(" ");
@@ -86,15 +87,151 @@ public class Mastermind {
 			}
 		}
 		
+		//guess 3
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(4).add(" ");
+		}
 		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(5).add("0");
+			if (i == 2) {
+				board.get(5).add("\n\t\t 0");
+			}
+		}
+		
+		//guess 4
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(6).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(7).add("0");
+			if (i == 2) {
+				board.get(7).add("\n\t\t 0");
+			}
+		}
+		
+		//guess 5
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(8).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(9).add("0");
+			if (i == 2) {
+				board.get(9).add("\n\t\t 0");
+			}
+		}
+		
+		//guess 6
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(10).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(11).add("0");
+			if (i == 2) {
+				board.get(11).add("\n\t\t 0");
+			}
+		}
+		
+		//guess 7
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(12).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(13).add("0");
+			if (i == 2) {
+				board.get(13).add("\n\t\t 0");
+			}
+		}
+		
+		//guess 8
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(14).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(15).add("0");
+			if (i == 2) {
+				board.get(15).add("\n\t\t 0");
+			}
+		}
+		
+		//guess 9
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(16).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(17).add("0");
+			if (i == 2) {
+				board.get(17).add("\n\t\t 0");
+			}
+		}
+		
+		//guess 10
+		board.add(new ArrayList<String>());
+		for (int i = 0; i < 4; i++) {
+			board.get(18).add(" ");
+		}
+		
+		board.add(new ArrayList<String>());
+		for (int i = 1; i < 4; i++) {
+			board.get(19).add("0");
+			if (i == 2) {
+				board.get(19).add("\n\t\t 0");
+			}
+		}
 	}
 	
 	
 	public void printBoard() {
 		System.out.println("\nGuesses         Scores");
+		//guess 1
 		System.out.print(board.get(0));
 		System.out.println("\t" + board.get(1));
+		//guess 2
 		System.out.print(board.get(2));
 		System.out.println("\t" + board.get(3));
+		//guess 3
+		System.out.print(board.get(4));
+		System.out.println("\t" + board.get(5));
+		//guess 4
+		System.out.print(board.get(6));
+		System.out.println("\t" + board.get(7));
+		//guess 5
+		System.out.print(board.get(8));
+		System.out.println("\t" + board.get(9));
+		//guess 6
+		System.out.print(board.get(10));
+		System.out.println("\t" + board.get(11));
+		//guess 7
+		System.out.print(board.get(12));
+		System.out.println("\t" + board.get(13));
+		//guess 8
+		System.out.print(board.get(14));
+		System.out.println("\t" + board.get(15));
+		//guess 9
+		System.out.print(board.get(16));
+		System.out.println("\t" + board.get(17));
+		//guess 10
+		System.out.print(board.get(18));
+		System.out.println("\t" + board.get(19));
 	}
 }
