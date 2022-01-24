@@ -1,0 +1,4 @@
+Jan 24:
+I set up all the loops for the formatting of my ten guesses on the board.  I can now test 1 guess against the code "ABCD" and print a 2 for correct letter and corrcet place, 
+a 1 for correct letter worng place, and a 0 for wrong letter wrong place.  For right now it only checks againt the four letters "ABCD".  It also now takes in user input for 
+the first guess.  My next steps is to be able to take n multiple guess and check it mutiple times, then expand it to include the actually Mastermind colors.
