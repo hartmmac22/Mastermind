@@ -6,6 +6,39 @@ public class Mastermind {
 	ArrayList<ArrayList<String>> board = new ArrayList<ArrayList<String>>();
 	Scanner keyboard = new Scanner(System.in);
 	
+	String c1;
+	String c2;
+	String c3;
+	String c4;
+	
+	public void makeGuess() {
+		// Red, Yellow, Orange, Green, Blue, Purple, White
+		
+		
+			int z = (int)(Math.random()*(7));
+			String[] arr  = { "R", "Y", "O", "G", "B", "P", "W"};
+			c1 = arr[z];
+			z = (int)(Math.random()*(7));
+			c2 = arr[z];
+			while (c1.equals(c2)) {
+				z = (int)(Math.random()*(7));
+				c2 = arr[z];
+			}
+			z = (int)(Math.random()*(7));
+			c3 = arr[z];
+			while (c1.equals(c3) || c2.equals(c3)) {
+				z = (int)(Math.random()*(7));
+				c3 = arr[z];
+			}
+			z = (int)(Math.random()*(7));
+			c4 = arr[z];
+			while (c1.equals(c4) || c2.equals(c4) || c3.equals(c4)) {
+				z = (int)(Math.random()*(7));
+				c4 = arr[z];
+			}
+			System.out.println(c1 + c2 + c3 + c4);
+	}
+	
 	
 	public void guessBoard() {
 		for (int h = 0; h < 20; h+=2) {
