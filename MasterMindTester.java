@@ -3,6 +3,5 @@ public class MasterMindTester {
 		Mastermind m1 = new Mastermind();
 		m1.buildBoard();
 		m1.guessBoard();
-		m1.printBoard();
 	}
 }
