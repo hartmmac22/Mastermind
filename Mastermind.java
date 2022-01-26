@@ -5,15 +5,17 @@ public class Mastermind {
 	
 	ArrayList<ArrayList<String>> board = new ArrayList<ArrayList<String>>();
 	Scanner keyboard = new Scanner(System.in);
+	
+	// variables
 	int d = 1;
 	int gameWin = 0;
 	int guesses = 0;
 	String c1;
-		String c2;
-		String c3;
-		String c4;
+	String c2;
+	String c3;
+	String c4;
 	
-	
+	//Prints rules in the begining
 	public void rules() {
 		System.out.println("\nRules: ");
 		System.out.println("- Color Choices: R, Y, O, G, B, P, W");
@@ -22,8 +24,8 @@ public class Mastermind {
 	}
 	
 	
+	//prints the formatting for the orginal board of all zeros
 	public void buildBoard() {
-		//prints the formatting for the orginal board of all zeros
 		for( int g = 0; g < 20; g+= 2) {
 			board.add(new ArrayList<String>());
 			for (int i = 0; i < 4; i++) {
@@ -40,32 +42,42 @@ public class Mastermind {
 		}
 	}// closes builBoard()
 	
+	
+	//creates the 4 digit "secret code"
 	public void makeGuess() {
 		int z = (int)(Math.random()*(7));
 		String[] arr  = { "R", "Y", "O", "G", "B", "P", "W"};
 		c1 = arr[z];
 		z = (int)(Math.random()*(7));
 		c2 = arr[z];
+		
 		while (c1.equals(c2)) {
 			z = (int)(Math.random()*(7));
 			c2 = arr[z];
 		}
+		
 		z = (int)(Math.random()*(7));
-		 c3 = arr[z];
+		c3 = arr[z];
+		 
 		while (c1.equals(c3) || c2.equals(c3)) {
 			z = (int)(Math.random()*(7));
 			c3 = arr[z];
 		}
+		
 		z = (int)(Math.random()*(7));
 		c4 = arr[z];
+		
 		while (c1.equals(c4) || c2.equals(c4) || c3.equals(c4)) {
 			z = (int)(Math.random()*(7));
 			c4 = arr[z];
 		}
+		
+		//TURN THIS ON TO HAVE THE SECRET CODE PRINT
 		System.out.println(c1 + c2 + c3 + c4);
-
 	}
 	
+	
+	//takes in the guesses and checks whether they are right
 	public void guessBoard() {
 		for (int h = 0; h < 20; h+=2) {
 			guesses = guesses + 1;
@@ -82,6 +94,7 @@ public class Mastermind {
 			board.get(h).set(1, digit2);
 			board.get(h).set(2, digit3);
 			board.get(h).set(3, digit4);
+		
 		
 			String a = "2";
 			String b = "1";
@@ -121,6 +134,7 @@ public class Mastermind {
 			}
 			
 			
+			//prints board
 			System.out.println("\nGuesses         Scores");
 			//prints each guess
 			for (int p = 0; p < d; p += 2) {
@@ -129,18 +143,19 @@ public class Mastermind {
 				//d++;
 			}
 			
+			d+=2;//makes sure the printing loop only prints the board for the amount of guesses they've made 
 			
-			d+=2;;
+			//checks if they guessed all 4 digits of the secret code correctly
 			if ( gameWin == 4) {
 				h = 20;
-			}
-		}	//close loop that cycles through guesses
+			}		
+		}
 		
 	}// closes guessBoard()
 	
 	public void gameEnd() {
 		if (guesses == 10 && gameWin != 4) {
-			System.out.println("Sorry you've run out of guesses");
+			System.out.println("Sorry you've run out of guesses.  The answer was " + c1 + c2 + c3 + c4);
 		}
 		else {
 			System.out.println("\nCongrats!! You've won the game!");
