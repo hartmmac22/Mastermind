@@ -8,55 +8,60 @@ public class Mastermind {
 	
 	
 	public void guessBoard() {
+		for (int h = 0; h < 20; h+=2) {
 		//secret code = ABCD
-		System.out.print("Guess Digit 1: ");
-		String digit1 = keyboard.nextLine();
-		System.out.print("\nGuess Digit 2: ");
-		String digit2 = keyboard.nextLine();
-		System.out.print("\nGuess Digit 3: ");
-		String digit3 = keyboard.nextLine();
-		System.out.print("\nGuess Digit 4: ");
-		String digit4 = keyboard.nextLine();
-		board.get(0).set(0, digit1);
-		board.get(0).set(1, digit2);
-		board.get(0).set(2, digit3);
-		board.get(0).set(3, digit4);
+			System.out.print("Guess Digit 1: ");
+			String digit1 = keyboard.nextLine();
+			System.out.print("\nGuess Digit 2: ");
+			String digit2 = keyboard.nextLine();
+			System.out.print("\nGuess Digit 3: ");
+			String digit3 = keyboard.nextLine();
+			System.out.print("\nGuess Digit 4: ");
+			String digit4 = keyboard.nextLine();
+			board.get(h).set(0, digit1);
+			board.get(h).set(1, digit2);
+			board.get(h).set(2, digit3);
+			board.get(h).set(3, digit4);
 		
-		String a = "2";
-		String b = "1";
-		//checks right letter wrong place guesses
-		if( board.get(0).get(0).equals("A") || board.get(0).get(0).equals("B") || board.get(0).get(0).equals("C") || board.get(0).get(0).equals("D")) {
-			board.get(1).set(2, ("\n\t\t " + b)); 
-		}
-		if( board.get(0).get(1).equals("A") || board.get(0).get(1).equals("B") || board.get(0).get(1).equals("C") || board.get(0).get(1).equals("D")) {
-			board.get(1).set(3, b); 
-		}
-		if( board.get(0).get(2).equals("A") || board.get(0).get(2).equals("B") || board.get(0).get(2).equals("C") || board.get(0).get(2).equals("D")) {
-			board.get(1).set(1, b); 
-		}
-		if( board.get(0).get(3).equals("A") || board.get(0).get(3).equals("B") || board.get(0).get(3).equals("C") || board.get(0).get(3).equals("D")) {
-			board.get(1).set(0, b); 
-		}
-		//checks correct guesses
-		if( board.get(0).get(0).equals("A")) {
-			board.get(1).set(2, ("\n\t\t " + a)); 
-		}
+			String a = "2";
+			String b = "1";
+			//checks right letter wrong place guesses
+			if( board.get(h).get(0).equals("A") || board.get(h).get(0).equals("B") || board.get(h).get(0).equals("C") || board.get(h).get(0).equals("D")) {
+				board.get(h+1).set(2, ("\n\t\t " + b)); 
+			}
+			if( board.get(h).get(1).equals("A") || board.get(h).get(1).equals("B") || board.get(h).get(1).equals("C") || board.get(h).get(1).equals("D")) {
+				board.get(h+1).set(3, b); 
+			}
+			if( board.get(h).get(2).equals("A") || board.get(h).get(2).equals("B") || board.get(h).get(2).equals("C") || board.get(h).get(2).equals("D")) {
+				board.get(h+1).set(1, b); 
+			}
+			if( board.get(h).get(3).equals("A") || board.get(h).get(3).equals("B") || board.get(h).get(3).equals("C") || board.get(h).get(3).equals("D")) {
+				board.get(h+1).set(0, b); 
+			}
+			//checks correct guesses
+			if( board.get(h).get(0).equals("A")) {
+				board.get(h+1).set(2, ("\n\t\t " + a)); 
+			}
 	
-		if( board.get(0).get(1).equals("B")) {
-			board.get(1).set(3, a); 
-		}
+			if( board.get(h).get(1).equals("B")) {
+				board.get(h+1).set(3, a); 
+			}
 	
-		if( board.get(0).get(2).equals("C")) {
-			board.get(1).set(1, a); 
-		}
+			if( board.get(h).get(2).equals("C")) {
+				board.get(h+1).set(1, a); 
+			}
 	
-		if( board.get(0).get(3).equals("D")) {
-			board.get(1).set(0, a); 
-		}
-		
-		
-		
-	}
+			if( board.get(h).get(3).equals("D")) {
+				board.get(h+1).set(0, a); 
+			}
+			System.out.println("\nGuesses         Scores");
+			//prints each guess
+			for (int p = 0; p < 20; p += 2) {
+				System.out.print(board.get(p));
+				System.out.println("\t" + board.get(p + 1));
+			}
+		}	//close loop that cycles through guesses
+	}// closes guessBoard()
 	
 	public void buildBoard() {
 		//prints the formatting for the orginal board of all zeros
@@ -74,17 +79,5 @@ public class Mastermind {
 				}
 			}	
 		}
-	
-	}
-	
-	
-	public void printBoard() {
-		System.out.println("\nGuesses         Scores");
-		//prints each guess
-		for (int h = 0; h < 20; h += 2) {
-			System.out.print(board.get(h));
-			System.out.println("\t" + board.get(h + 1));
-		}
 	}
 }
-
