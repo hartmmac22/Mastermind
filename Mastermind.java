@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/** Mackenzie's Matermind
+ * This file runs the game of Mastermind.
+ * You have 10 guesses to guess a 4 digit code from the letters R, Y, O, G, B, P, W.
+ */
+ 
 public class Mastermind {
 	
 	ArrayList<ArrayList<String>> board = new ArrayList<ArrayList<String>>();
@@ -17,6 +22,10 @@ public class Mastermind {
 	
 	//Prints rules in the begining
 	public void rules() {
+		System.out.println("\nGame : Mastermind is a game where you guess a 4 digit code from the letters R, Y, O, G, B, P, W.");  
+		System.out.println("For every correct guess a 2 will print in the box next to the guess, but these numbers do not necessarily");
+		System.out.println("correspond to the guess.  When you guess a correct letter but in the wrong place a 1 will print.  If you guess"); 
+		System.out.println("an incorrect letter that is not in the code, then a 0 will print.");
 		System.out.println("\nRules: ");
 		System.out.println("- Color Choices: R, Y, O, G, B, P, W");
 		System.out.println("- No Repeats");
@@ -24,7 +33,7 @@ public class Mastermind {
 	}
 	
 	
-	//prints the formatting for the orginal board of all zeros
+	//prints the formatting for the orginal board with blanks and zeros
 	public void buildBoard() {
 		for( int g = 0; g < 20; g+= 2) {
 			board.add(new ArrayList<String>());
@@ -43,7 +52,7 @@ public class Mastermind {
 	}// closes builBoard()
 	
 	
-	//creates the 4 digit "secret code"
+	//creates the 4 digit "secret code" with no repeat letters
 	public void makeGuess() {
 		int z = (int)(Math.random()*(7));
 		String[] arr  = { "R", "Y", "O", "G", "B", "P", "W"};
@@ -77,12 +86,12 @@ public class Mastermind {
 	}
 	
 	
-	//takes in the guesses and checks whether they are right
+	//takes in user guesses and checks whether they are right
 	public void guessBoard() {
 		for (int h = 0; h < 20; h+=2) {
 			guesses = guesses + 1;
-			System.out.println("Guess " + guesses);
-			System.out.print("Guess Digit 1: ");
+			System.out.println("\n\t**Guess " + guesses + "**");
+			System.out.print("\nGuess Digit 1: ");
 			String digit1 = keyboard.nextLine();
 			System.out.print("\nGuess Digit 2: ");
 			String digit2 = keyboard.nextLine();
@@ -99,6 +108,7 @@ public class Mastermind {
 			String a = "2";
 			String b = "1";
 			gameWin = 0;
+			
 			//checks right letter wrong place guesses
 			if( board.get(h).get(0).equals(c1) || board.get(h).get(0).equals(c2) || board.get(h).get(0).equals(c3) || board.get(h).get(0).equals(c4)) {
 				board.get(h+1).set(2, ("\n\t\t " + b)); 
@@ -112,6 +122,7 @@ public class Mastermind {
 			if( board.get(h).get(3).equals(c1) || board.get(h).get(3).equals(c2) || board.get(h).get(3).equals(c3) || board.get(h).get(3).equals(c4)) {
 				board.get(h+1).set(0, b); 
 			}
+			
 			//checks correct guesses
 			if( board.get(h).get(0).equals(c1)) {
 				board.get(h+1).set(2, ("\n\t\t " + a));
@@ -140,7 +151,6 @@ public class Mastermind {
 			for (int p = 0; p < d; p += 2) {
 				System.out.print(board.get(p));
 				System.out.println("\t" + board.get(p + 1));
-				//d++;
 			}
 			
 			d+=2;//makes sure the printing loop only prints the board for the amount of guesses they've made 
@@ -160,5 +170,11 @@ public class Mastermind {
 		else {
 			System.out.println("\nCongrats!! You've won the game!");
 		}
-	}
-}
+	} //closes gameEnd()
+} //closes class Mastermind
+
+
+
+
+
+
