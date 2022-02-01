@@ -33,7 +33,8 @@ Mastermind.  (Main.java class if using Repl.it but ok)
 	**1-1D array for the secret code
 
 
-
+----------------------------------------------------------------------------------
+Mackenzie's ReadMe File:
 
 For this project I coded a game of Mastermind.  I began the project simply trying to get the format of my board, where it print a 4 digit line then a 2x2 box.  This formatting took a while to get down but after I figured it out I move onto the guessing part of the game.  I worked on creating a method that would take in user input for the four digit code and place in correctly into the board.  After I finished that I worked on a checking that against the four digit code "ABCD".  Once the checking function was finished I moved onto checking it against a randomly created 4 digit code.  After that the basic game was finished and I moved onto fine tuning details.  I simplified some of my code by creating more for loops; I made it so that the board only prints the amount of guesses you have made and not the entire board eberytime; I added a play again function; I added rules; I then fine tuned the printing meachnisms to make evrything look pretty.
 
