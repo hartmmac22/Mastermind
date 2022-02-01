@@ -31,3 +31,20 @@ Mastermind.  (Main.java class if using Repl.it but ok)
 
 *Arrays - 1-2D array for player guesses
 	**1-1D array for the secret code
+
+
+
+
+For this project I coded a game of Mastermind.  I began the project simply trying to get the format of my board, where it print a 4 digit line then a 2x2 box.  This formatting took a while to get down but after I figured it out I move onto the guessing part of the game.  I worked on creating a method that would take in user input for the four digit code and place in correctly into the board.  After I finished that I worked on a checking that against the four digit code "ABCD".  Once the checking function was finished I moved onto checking it against a randomly created 4 digit code.  After that the basic game was finished and I moved onto fine tuning details.  I simplified some of my code by creating more for loops; I made it so that the board only prints the amount of guesses you have made and not the entire board eberytime; I added a play again function; I added rules; I then fine tuned the printing meachnisms to make evrything look pretty.
+
+Rules: 
+1. 10 trys to guess a 4 digit code
+2. No Repeat letters
+3. 0 = Wrong Letter, Wrong Place
+4. 1 = Right Letter, Wrong Place
+5. 2 = Right Letter, Right Place
+
+The hardest part of this project was definetly printing the correct format for the board and making sure everything I wanted to input into the board made it to the right place.  The other parts of the lab, such as generating the random code or checking the guesses, were not as hard to code.  The part that took me a while was after all the basic functions were done, was simplifying my code and shorten it while still keeping its function in tact.  I don't always use loops the first time around and rather op for just copy and pasting things over and over again, so after I know something works I then go back to make it a loop.  Overall, it was a fun but challenging project.
+
+
+
